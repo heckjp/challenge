@@ -19,7 +19,7 @@ class CreatePersonTable extends Migration
             $table->integer('numero');
             $table->tinyInteger('digito');
             $table->string('nome',200);
-            $table->char('cpf',11);
+            $table->char('cpf',11)->unique();
             $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

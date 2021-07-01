@@ -18,6 +18,7 @@ class CreateCompanyTable extends Migration
             $table->integer('agencia');
             $table->integer('numero');
             $table->tinyInteger('digito');
+            $table->char('cnpj',14)->unique();
             $table->string('nome_fantasia',200);
             $table->string('razao_social',200);
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
